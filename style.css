@@ -1,0 +1,1173 @@
+#apple {
+  opacity: 0; }
+
+#diamond {
+  opacity: 0; }
+
+#stem01-01, #stem01-02, #stem01-03, #stem01-04, #stem01-05, #stem01-06, #stem01-07, #stem01-08, #stem01-09, #stem01-10, #stem01-11, #stem01-12 {
+  opacity: 0; }
+
+#leaf01-01, #leaf01-02, #leaf01-03, #leaf01-04, #leaf01-05, #leaf01-06, #leaf01-07, #leaf01-08, #leaf01-09, #leaf01-10, #leaf01-11, #leaf01-12, #leaf01-13, #leaf01-14, #leaf01-15 {
+  opacity: 0; }
+
+#circle01-01, #circle01-02, #circle01-03, #circle01-04, #circle01-05, #circle01-06 {
+  opacity: 0; }
+
+#stem02-01, #stem02-02, #stem02-03, #stem02-04, #stem02-05, #stem02-06, #stem02-07, #stem02-08, #stem02-09, #stem02-10, #stem02-11, #stem02-12 {
+  opacity: 0; }
+
+#leaf02-01, #leaf02-02, #leaf02-03, #leaf02-04, #leaf02-05, #leaf02-06, #leaf02-07, #leaf02-08, #leaf02-09, #leaf02-10, #leaf02-11, #leaf02-12 {
+  opacity: 0; }
+
+#circle02-01, #circle02-02, #circle02-03, #circle02-04, #circle02-05, #circle02-06, #circle02-07 {
+  opacity: 0; }
+
+
+/*
+Theme Name: heyross
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: heyross
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+heyross is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  font-weight: 300;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both; }
+
+p {
+  margin-bottom: 1.5em; }
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 1.5em; }
+
+address {
+  margin: 0 0 1.5em; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em; }
+
+code,
+kbd,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ""; }
+
+blockquote,
+q {
+  quotes: "" ""; }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+ul,
+ol {
+  margin: 0 0 1.5em 3em; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */ }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: #e73c3e; }
+
+a:hover,
+a:focus,
+a:active {
+  color: #be955b; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:hover,
+a:active {
+  outline: 0; }
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  width: 100%;
+  text-align: center; }
+
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+
+.main-navigation li {
+  display: inline-block;
+  position: relative;
+  margin-right: 80px; }
+  .main-navigation li:nth-child(2) {
+    margin-right: 300px; }
+  .main-navigation li:after {
+    content: "|";
+    position: absolute;
+    top: -7px;
+    left: calc(190%);
+    color: #e73c3e;
+    font-size: 1.4rem; }
+  .main-navigation li:nth-child(3):before {
+    content: "|";
+    position: absolute;
+    top: -7px;
+    left: calc(-90%);
+    color: #e73c3e;
+    font-size: 1.4rem; }
+  .main-navigation li:nth-child(4) {
+    margin-right: 0; }
+  .main-navigation li:nth-child(4):after {
+    content: " "; }
+
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+  color: #e73c3e;
+  font-weight: 400;
+  transition: color .5s ease; }
+  .main-navigation a:hover {
+    color: #6d6e71; }
+
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 1.5em;
+  left: -999em;
+  z-index: 99999; }
+
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0; }
+
+.main-navigation ul ul a {
+  width: 200px; }
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto; }
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%; }
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: block; } }
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em; }
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+  display: block; }
+
+.hentry {
+  margin: 0 0 1.5em; }
+
+.byline,
+.updated:not(.published) {
+  display: none; }
+
+.single .byline,
+.group-blog .byline {
+  display: inline; }
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word; }
+
+.bypostauthor {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5em; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%; }
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%; }
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%; }
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%; }
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%; }
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%; }
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%; }
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%; }
+
+.gallery-caption {
+  display: block; }
+
+/*--------------------------------------------------------------
+##############################
+## Custom Styles
+##############################
+--------------------------------------------------------------*/
+.contact {
+  width: 100%;
+  max-width: 710px;
+  margin: 0 auto; }
+
+.nav-container {
+  position: relative;
+  height: 120px;
+  border-bottom: 1px solid rgba(109, 110, 113, 0.25);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e6e7e8+100 */
+  background: #ffffff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ffffff 0%, #e6e7e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e7e8',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
+.site-branding {
+  float: left;
+  background: yellow;
+  width: 100%; }
+  .site-branding h1, .site-branding p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 150px;
+    height: 100px;
+    padding: 10px; }
+
+.site-header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(0, 0, 255, 0.2); }
+
+.site-info, .menu-footer-container {
+  display: inline-block; }
+  .site-info ul, .menu-footer-container ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .site-info ul li, .menu-footer-container ul li {
+      margin: 0;
+      padding: 0;
+      display: inline-block; }
+
+.copy-right {
+  display: inline-block;
+  margin-right: 20px; }
+
+.news {
+  height: 100vh; }
+  .news .news--starter {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #e73c3e; }
+    .news .news--starter .news--starter--title {
+      position: absolute;
+      top: 42.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; }
+      .news .news--starter .news--starter--title .apple--holder {
+        position: absolute;
+        width: 9.1%;
+        left: -15%;
+        transition: left 2s ease; }
+      .news .news--starter .news--starter--title .apple-left {
+        z-index: 20; }
+      .news .news--starter .news--starter--title .apple-right {
+        z-index: 30; }
+      .news .news--starter .news--starter--title .apple--baseline-left {
+        position: absolute;
+        right: 50%;
+        z-index: 40;
+        width: 100%;
+        height: 3px;
+        opacity: 0; }
+      .news .news--starter .news--starter--title .apple--baseline-right {
+        position: absolute;
+        left: 50%;
+        z-index: 40;
+        width: 100%;
+        height: 3px;
+        opacity: 0; }
+      .news .news--starter .news--starter--title .apple-01-left {
+        left: -0.33%; }
+      .news .news--starter .news--starter--title .apple-02-left {
+        left: 7.87%; }
+      .news .news--starter .news--starter--title .apple-03-left {
+        left: 16.366%; }
+      .news .news--starter .news--starter--title .apple-04-left {
+        left: 24.499%; }
+      .news .news--starter .news--starter--title .apple-05-left {
+        left: 33.0%; }
+      .news .news--starter .news--starter--title .apple-06-left {
+        left: 41.19%; }
+      .news .news--starter .news--starter--title .apple-07-left {
+        left: 49.698%; }
+      .news .news--starter .news--starter--title .apple-08-left {
+        left: 57.866%; }
+      .news .news--starter .news--starter--title .apple-09-left {
+        left: 66.364%; }
+      .news .news--starter .news--starter--title .apple-10-left {
+        left: 74.56%; }
+      .news .news--starter .news--starter--title .apple-11-left {
+        left: 83.033%; }
+      .news .news--starter .news--starter--title .apple-12-left {
+        left: 91.163%; }
+    .news .news--starter .hero-logo-holder {
+      width: 35%;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      z-index: 50;
+      transform: translate(-50%, 20%); }
+      .news .news--starter .hero-logo-holder .introducing {
+        width: 100%;
+        padding: 0 35%;
+        opacity: 0; }
+      .news .news--starter .hero-logo-holder .reinhart-logo {
+        width: 100%;
+        padding: 0 5%;
+        opacity: 0; }
+
+.move-left-line {
+  transform: translateX(-25%) !important;
+  transition: transform 1.5s ease; }
+
+.move-right-line {
+  transform: translateX(25%) !important;
+  transition: transform 1.5s ease; }
+
+.move-left-apples {
+  transform: translateX(-230%) !important;
+  transition: transform 1s ease !important; }
+
+.move-right-apples {
+  transform: translateX(230%) !important;
+  transition: transform 1s ease !important; }
+
+.show-intro, .show-logo {
+  opacity: 1 !important;
+  transition: opacity 1s ease !important; }
+
+#apple {
+  opacity: 0; }
+
+#diamond {
+  opacity: 0; }
+
+#stem01-01, #stem01-02, #stem01-03, #stem01-04, #stem01-05, #stem01-06, #stem01-07, #stem01-08, #stem01-09, #stem01-10, #stem01-11, #stem01-12 {
+  opacity: 0; }
+
+#leaf01-01, #leaf01-02, #leaf01-03, #leaf01-04, #leaf01-05, #leaf01-06, #leaf01-07, #leaf01-08, #leaf01-09, #leaf01-10, #leaf01-11, #leaf01-12, #leaf01-13, #leaf01-14, #leaf01-15 {
+  opacity: 0; }
+
+#circle01-01, #circle01-02, #circle01-03, #circle01-04, #circle01-05, #circle01-06 {
+  opacity: 0; }
+
+#stem02-01, #stem02-02, #stem02-03, #stem02-04, #stem02-05, #stem02-06, #stem02-07, #stem02-08, #stem02-09, #stem02-10, #stem02-11, #stem02-12 {
+  opacity: 0; }
+
+#leaf02-01, #leaf02-02, #leaf02-03, #leaf02-04, #leaf02-05, #leaf02-06, #leaf02-07, #leaf02-08, #leaf02-09, #leaf02-10, #leaf02-11, #leaf02-12 {
+  opacity: 0; }
+
+#circle02-01, #circle02-02, #circle02-03, #circle02-04, #circle02-05, #circle02-06, #circle02-07 {
+  opacity: 0; }
+
+.story {
+  height: 500px;
+  position: relative;
+  overflow-x: hidden; }
+  .story .story--starter-container {
+    float: left;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: all .5s ease; }
+    .story .story--starter-container .story--starter-image {
+      float: left;
+      width: 0%;
+      height: 100%;
+      background-position: 50%;
+      background-size: cover;
+      transition: all .5s ease; }
+    .story .story--starter-container .story--starter {
+      float: left;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e7dcc4+0,be955b+100 */
+      background: #e7dcc4;
+      /* Old browsers */
+      /* FF3.6-15 */
+      /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #e7dcc4 0%, #be955b 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7dcc4', endColorstr='#be955b',GradientType=1 );
+      /* IE6-9 fallback on horizontal gradient */
+      transition: all .5s ease; }
+      .story .story--starter-container .story--starter .story--starter--title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px; }
+  .story .story--slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -100%;
+    transition: all .5s ease; }
+
+.ciders {
+  height: 500px;
+  position: relative; }
+  .ciders .ciders--marker {
+    width: 220px;
+    height: 120px;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    z-index: 200;
+    transform: translateX(-50%);
+    background: #e7dcc4;
+    border: 2px solid #be955b;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(109, 110, 113, 0.5);
+    display: none;
+    opacity: 0;
+    transition: all .25s ease; }
+  .ciders .flex-control-nav {
+    display: none; }
+  .ciders .ciders--starter-container {
+    float: left;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: all .5s ease; }
+    .ciders .ciders--starter-container .ciders--starter-image {
+      float: left;
+      width: 0%;
+      height: 100%;
+      background-position: 50%;
+      background-size: cover;
+      transition: all .5s ease; }
+    .ciders .ciders--starter-container .ciders--starter {
+      float: left;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1f2f2+0,d1d3d4+100 */
+      background: #f1f2f2;
+      /* Old browsers */
+      /* FF3.6-15 */
+      /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #f1f2f2 0%, #d1d3d4 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f2f2', endColorstr='#d1d3d4',GradientType=1 );
+      /* IE6-9 fallback on horizontal gradient */
+      transition: all .5s ease; }
+      .ciders .ciders--starter-container .ciders--starter .ciders--starter--title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px; }
+  .ciders .ciders--hider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    overflow-x: hidden; }
+    .ciders .ciders--hider .ciders--slider {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 100%;
+      transition: all .5s ease; }
+
+.logo-holder {
+  float: left;
+  width: 60%;
+  height: 100%;
+  margin-right: 15px; }
+
+.title-holder {
+  float: left;
+  width: 30%;
+  height: 100%;
+  margin-top: 10px; }
+
+.the-cta {
+  float: left;
+  width: 100%;
+  height: 25px;
+  color: #e73c3e;
+  font-weight: 400;
+  font-size: .9rem;
+  text-align: center;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity .5s ease; }
+  .the-cta p {
+    margin-top: 0; }
+
+.go-right {
+  display: inline-block;
+  padding-left: 5px; }
+
+.slide-image {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: grey; }
+
+.slide-info {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: pink; }
+
+.contact {
+  position: relative;
+  padding: 175px 0 100px;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto; }
+  .contact p {
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+    margin: 0; }
+  .contact .contactText {
+    margin-bottom: 25px; }
+
+.site-footer {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 35px; }
+  .site-footer a {
+    color: #be955b;
+    text-decoration: none; }
+    .site-footer a:before {
+      content: '|';
+      padding-right: 20px; }
+    .site-footer a:hover {
+      color: #6d6e71; }
+
+.menu-item-13 {
+  margin-right: 20px !important; }
+
+.tower {
+  height: 125px;
+  width: 100%;
+  background: url("http://localhost:8888/084-Reinhart/Production/wp-content/themes/heyross/img/staynor-tower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; }
+
+.makeHalf {
+  width: 50% !important; }
+
+.takeOutStoryStarter {
+  transform: translateX(100%) !important; }
+
+.takeOutCidersStarter {
+  transform: translateX(-100%) !important; }
+
+.bringInStorySlider {
+  left: 0 !important; }
+
+.bringInCidersSliders {
+  left: 0 !important; }
+
+.fade-in {
+  opacity: 1 !important; }
+
+.show-it {
+  display: block !important; }
+
+.cursor-on {
+  cursor: pointer !important; }
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(231, 220, 196, 0.5);
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1) inset;
+  font-size: .9rem;
+  color: #be955b;
+  margin-bottom: 10px; }
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #be955b; }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #be955b; }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #be955b; }
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: #be955b; }
+
+textarea {
+  height: 200px; }
+
+input[type="submit"] {
+  color: transparent;
+  margin: 20px 0;
+  background-color: transparent;
+  background-image: url(http://heyross.io/skan/wp-content/themes/heyross/img/submit.png);
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  width: 68px;
+  /*height of the background image*/
+  height: 15px;
+  /*width of the background image*/
+  box-shadow: none;
+  transition: all .25s ease; }
+
+input[type="submit"]:hover {
+  opacity: .55; }
+
+div.wpcf7-response-output, div.wpcf7-validation-errors {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: red !important;
+  font-size: 0.85rem !important; }
