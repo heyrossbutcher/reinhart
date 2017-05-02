@@ -2,7 +2,8 @@ var app = {};//Namespace
 //
 app.story = $('.story');
 app.ciders = $('.ciders');
-app.cidersMarker = $('.ciders--marker-list');
+app.products = $('.products');
+app.productsMarker = $('.products--marker-list');
 //
 app.story.on('mouseover', function(){``
 	$('.story--starter').addClass('makeHalf');
@@ -15,7 +16,8 @@ app.story.on('mouseleave', function(){
 	$('.story--starter--title .the-cta').removeClass('fade-in');
 });
 //
-app.ciders.on('mouseover', function(){
+//
+app.ciders.on('mouseover', function(){``
 	$('.ciders--starter').addClass('makeHalf');
 	$('.ciders--starter-image').addClass('makeHalf');
 	$('.ciders--starter--title .the-cta').addClass('fade-in');
@@ -26,6 +28,19 @@ app.ciders.on('mouseleave', function(){
 	$('.ciders--starter--title .the-cta').removeClass('fade-in');
 });
 //
+//
+app.products.on('mouseover', function(){
+	$('.products--starter').addClass('makeHalf');
+	$('.products--starter-image').addClass('makeHalf');
+	$('.products--starter--title .the-cta').addClass('fade-in');
+});
+app.products.on('mouseleave', function(){
+	$('.products--starter').removeClass('makeHalf');
+	$('.products--starter-image').removeClass('makeHalf');
+	$('.products--starter--title .the-cta').removeClass('fade-in');
+});
+//
+//
 app.story.on('click', function(){
 	$('.story--starter-container').addClass('takeOutStoryStarter');
 	$('.story--slider').addClass('bringInStorySlider');
@@ -33,24 +48,29 @@ app.story.on('click', function(){
 });
 app.ciders.on('click', function(){
 	$('.ciders--starter-container').addClass('takeOutCidersStarter');
-	$('.ciders--slider').addClass('bringInCidersSliders');
+	$('.ciders--slider').addClass('bringInCidersSlider');
 	$('.ciders').removeClass('cursor-on');
-	$('.ciders--marker').addClass('show-it');
+});
+app.products.on('click', function(){
+	$('.products--starter-container').addClass('takeOutProductsStarter');
+	$('.products--slider').addClass('bringInProductsSliders');
+	$('.cidproductsers').removeClass('cursor-on');
+	$('.products--marker').addClass('show-it');
 	setTimeout(function(){
-		$('.ciders--marker').addClass('fade-in');
+		$('.products--marker').addClass('fade-in');
 	}, 500);
 });
 
 //FIND THE NUMBER OF CIDERS
-app.makeCiderIndex = function(){
-	$('.ciders--slider .slides').find('[data-thumb-alt]').attr('data-counter', '1');
+app.makeProductsIndex = function(){
+	$('.products--slider .slides').find('[data-thumb-alt]').attr('data-counter', '1');
 	var counter = 1;
 	$('[data-counter=1]').each(function(){
 		$(this).attr('data-counter', counter);
 		counter++;
 	});
 }
-app.changeCiderIndex = function(){
+app.changeProductsIndex = function(){
 	var holder = $('.flex-active-slide').attr('data-counter');
 	console.log(holder);
 }
@@ -61,12 +81,17 @@ $('.flexslider-story').flexslider({
 	slideshow: false, 
 	animation: "slide"
 });
-// 
+//
 $('.flexslider-ciders').flexslider({
+	slideshow: false, 
+	animation: "slide"
+});
+// 
+$('.flexslider-products').flexslider({
 	slideshow: false, 
 	animation: "slide",
 	before: function(){
-		app.changeCiderIndex();
+		app.changeProductIndex();
 	} 
 });
 // 
@@ -302,6 +327,6 @@ setTimeout( function(){
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 $(function() {
-	app.makeCiderIndex();
+	app.makeProductsIndex();
 });
 	

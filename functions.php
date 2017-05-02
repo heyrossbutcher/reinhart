@@ -152,3 +152,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/* pre_r() - makes for easy debugging. <?php pre_r($post); ?> */
+function pre_r($obj) {
+	echo "<pre>";
+	print_r($obj);
+	echo "</pre>";
+}

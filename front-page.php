@@ -1885,72 +1885,57 @@ get_header(); ?>
 			</div>
 			<div class="story--slider flexslider flexslider-story">
 				<ul class="slides clearfix">
-					<li class="clearfix">
-						<div class="slide-image">one</div>
-						<div class="slide-info">one</div>
-					</li>
-					<li class="clearfix">
-						<div class="slide-image">two</div>
-						<div class="slide-info">two</div>
-					</li>
-					<li class="clearfix">
-						<div class="slide-image">three</div>
-						<div class="slide-info">three</div>
-					</li>
-					<li class="clearfix">
-						<div class="slide-image">four</div>
-						<div class="slide-info">four</div>
-					</li>
-					<li class="clearfix">
-						<div class="slide-image">five</div>
-						<div class="slide-info">five</div>
-					</li>
+					<?php $latestPosts = new wp_query(array(
+			            'post_type' => 'story',//we only want home pieces
+			            'posts_per_page' => -1,
+			            'order' => 'ASC'
+			          )) ?> 
+					<?php require('template-parts/story-slides.php'); ?>
 				</ul>
 			</div>
 		</section>
 		<section class="ciders cursor-on clearfix">
-			<div class="ciders--marker">
-				<ul class="ciders--marker-list"></ul>
-			</div>
 			<div class="ciders--starter-container">
+				<div class="ciders--starter-image" style="background-image: url(<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/oldTower.jpg)"></div>
 				<div class="ciders--starter">
 					<div class="ciders--starter--title clearfix">
 						<div class="logo-holder"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/reinharts.svg" alt=""></div>
 						<div class="title-holder"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/ciders.svg" alt=""></div>
-						<div class="the-cta"><p>Click to see more </p>
-						<!-- <div class="go-right"><img src="http://localhost:8888/084-Reinhart/Production/wp-content/themes/heyross/img/ctaArrow.png" alt=""></div> -->
-						</div>
+						<div class="the-cta go-left"><p>Click to read more</p></div>
 					</div>
 				</div>
-				<div class="ciders--starter-image" style="background-image: url(<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/theTray.jpg)"></div>
 			</div>
-			<div class="ciders--hider">
-				<div class="ciders--slider flexslider flexslider-ciders">
-					<ul class="slides clearfix">
-						<li class="clearfix">
-							<div class="slide-info">one</div>
-							<div class="slide-image">one</div>
-						</li>
-						<li class="clearfix">
-							<div class="slide-info">two</div>
-							<div class="slide-image">two</div>
-						</li>
-						<li class="clearfix">
-							<div class="slide-info">three</div>
-							<div class="slide-image">three</div>
-						</li>
-						<li class="clearfix">
-							<div class="slide-info">four</div>
-							<div class="slide-image">four</div>
-						</li>
-						<li class="clearfix">
-							<div class="slide-info">five</div>
-							<div class="slide-image">five</div>
-						</li>
-					</ul>
-				</div>
+			<div class="ciders--slider flexslider flexslider-ciders">
+				<ul class="slides clearfix">
+					<?php $latestPosts = new wp_query(array(
+			            'post_type' => 'cider_story',//we only want home pieces
+			            'posts_per_page' => -1
+			          )) ?> 
+					<?php require('template-parts/story-slides.php'); ?>
+				</ul>
 			</div>
 		</section>
+		<!-- CHECK IF PRODUCTS ARE POSTED -->
+		<?php $latestPosts = new wp_query(array(
+            'post_type' => 'product',//we only want home pieces
+            'posts_per_page' => -1,
+            'order' => 'ASC'
+          )) ?> 
+		<?php
+			if ($latestPosts->have_posts()) : while ($latestPosts->have_posts()) : $latestPosts->the_post();
+
+					// echo '<div>';
+					// echo 'hello';
+					// the_title();
+					// the_content();
+					// echo '</div>';
+					require_once('template-parts/products.php');
+			
+			endwhile;
+			endif;
+		?>
+		<!--  -->
+		
 		<section class="contact">
 
 			<?php query_posts('pagename=Contact'); ?>
