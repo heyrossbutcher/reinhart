@@ -1,6 +1,9 @@
 <section class="products cursor-on clearfix">
+
 	<div class="products--marker">
-		<ul class="products--marker-list"></ul>
+		<ul class="products--marker-list">
+				
+		</ul>
 	</div>
 	<div class="products--starter-container">
 		<div class="products--starter">
@@ -18,26 +21,23 @@
 	<div class="products--hider">
 		<div class="products--slider flexslider flexslider-products">
 			<ul class="slides clearfix">
-				<li class="clearfix">
-					<div class="slide-info">one</div>
-					<div class="slide-image">one</div>
-				</li>
-				<li class="clearfix">
-					<div class="slide-info">two</div>
-					<div class="slide-image">two</div>
-				</li>
-				<li class="clearfix">
-					<div class="slide-info">three</div>
-					<div class="slide-image">three</div>
-				</li>
-				<li class="clearfix">
-					<div class="slide-info">four</div>
-					<div class="slide-image">four</div>
-				</li>
-				<li class="clearfix">
-					<div class="slide-info">five</div>
-					<div class="slide-image">five</div>
-				</li>
+			<?php 
+				$thumb_id = get_post_thumbnail_id();
+				$thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
+				$theTitle = get_the_title();
+				$theCopy = get_the_content();
+				echo '<li class="clearfix">';
+				echo '<div class="slide-image">';
+				echo '<img src="'.$thumb_url[0].'" alt="">';
+				echo '</div>';
+				echo '<div class="slide-info">';
+				echo '<div class="info-wrapper">';
+				echo '<h2>'.$theTitle.'</h2>';
+				echo '<p>'.$theCopy.'</p>';
+				echo '</div>';
+				echo '</div>';
+				echo '</li>';
+			 ?>
 			</ul>
 		</div>
 	</div>

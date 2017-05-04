@@ -1916,19 +1916,13 @@ get_header(); ?>
 			</div>
 		</section>
 		<!-- CHECK IF PRODUCTS ARE POSTED -->
-		<?php $latestPosts = new wp_query(array(
+		<?php $products = new wp_query(array(
             'post_type' => 'product',//we only want home pieces
             'posts_per_page' => -1,
             'order' => 'ASC'
           )) ?> 
 		<?php
-			if ($latestPosts->have_posts()) : while ($latestPosts->have_posts()) : $latestPosts->the_post();
-
-					// echo '<div>';
-					// echo 'hello';
-					// the_title();
-					// the_content();
-					// echo '</div>';
+			if ($products->have_posts()) : while ($products->have_posts()) : $products->the_post();
 					require_once('template-parts/products.php');
 			
 			endwhile;

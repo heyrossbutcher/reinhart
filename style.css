@@ -783,7 +783,8 @@ object {
   margin-right: 20px; }
 
 .news {
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   .news .news--starter {
     position: relative;
     cursor: pointer;
@@ -952,7 +953,8 @@ object {
 .story {
   height: 500px;
   position: relative;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
   .story .story--starter-container {
     float: left;
     width: 100%;
@@ -1005,7 +1007,7 @@ object {
     height: 100%;
     margin-top: 10px; }
   .story .slide-image {
-    float: left; }
+    float: right; }
   .story .slide-info {
     float: left;
     background-color: rgba(231, 220, 196, 0.5); }
@@ -1013,7 +1015,8 @@ object {
 .ciders {
   height: 500px;
   position: relative;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
   .ciders .ciders--starter-container {
     float: left;
     width: 100%;
@@ -1067,14 +1070,15 @@ object {
     height: 100%;
     margin-top: 10px; }
   .ciders .slide-image {
-    float: right; }
+    float: left; }
   .ciders .slide-info {
     float: left;
     background-color: #e8eaeb; }
 
 .products {
   height: 500px;
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
   .products .products--marker {
     width: 220px;
     height: 120px;
@@ -1149,6 +1153,22 @@ object {
     margin-top: 7px; }
   .products .the-cta {
     color: #E7DCC4; }
+  .products .slide-image {
+    float: right;
+    background-image: url("./img/can-bg.png");
+    width: 50%;
+    height: 100%;
+    background-size: 1000px;
+    background-position: center -20%;
+    background-repeat: no-repeat; }
+    .products .slide-image img {
+      width: auto;
+      max-height: 80%;
+      margin: 0 auto;
+      margin-top: 60px; }
+  .products .slide-info {
+    float: left;
+    background-color: #e6e7e8; }
 
 .go-right {
   display: inline-block;
@@ -1252,16 +1272,17 @@ input[type="submit"] {
   color: transparent;
   margin: 20px 0;
   background-color: transparent;
-  background-image: url(http://heyross.io/skan/wp-content/themes/heyross/img/submit.png);
+  background-image: url("./img/submit.png");
+  background-size: cover;
   display: inline-block;
   cursor: pointer;
   border: none;
-  width: 68px;
+  width: 120px;
   /*height of the background image*/
-  height: 15px;
+  height: 30px;
   /*width of the background image*/
   box-shadow: none;
-  transition: all .25s ease; }
+  margin: 0 auto; }
 
 input[type="submit"]:hover {
   opacity: .55; }

@@ -1007,6 +1007,7 @@ object {
 // 
 .news{
 	height: 100vh;
+	overflow: hidden;
 	.news--starter{
 		position: relative;
 		cursor: pointer;
@@ -1195,6 +1196,8 @@ object {
 	height: 500px;
 	position: relative;
 	overflow-x: hidden;
+
+	border-bottom: 1px solid rgba($goldText, .5);
 	.story--starter-container{
 		float: left;
 		width: 100%;
@@ -1255,7 +1258,7 @@ object {
 		margin-top: 10px;
 	}
 	.slide-image{
-		float:left;	
+		float:right;	
 		
 	}
 	.slide-info{
@@ -1268,6 +1271,7 @@ object {
 	height: 500px;
 	position: relative;
 	overflow-x: hidden;
+	border-bottom: 1px solid rgba($goldText, .5);
 	.ciders--starter-container{
 		float: left;
 		width: 100%;
@@ -1328,7 +1332,7 @@ object {
 		margin-top: 10px;
 	}
 	.slide-image{
-		float:right;	
+		float:left;	
 		
 	}
 	.slide-info{
@@ -1340,6 +1344,7 @@ object {
 .products{
 	height: 500px;
 	position: relative;
+	border-bottom: 1px solid rgba($goldText, .5);
 	// overflow-x: hidden;
 	.products--marker{
 		width: 220px;
@@ -1430,6 +1435,25 @@ object {
 	}
 	.the-cta{
 		color: #E7DCC4;
+	}
+	.slide-image{
+		float:right;	
+		background-image: url('./img/can-bg.png');
+		width: 50%;
+		height: 100%;
+		background-size: 1000px;
+		background-position: center -20%;
+		background-repeat: no-repeat;
+		img{
+			width: auto;
+			max-height: 80%;
+			margin: 0 auto;
+			margin-top: 60px;
+		}
+	}
+	.slide-info{
+		float:left;	
+		background-color: rgba(#E6E7E8, 1);
 	}
 }
 
@@ -1560,16 +1584,19 @@ input[type="submit"] {
   color: transparent;
   margin: 20px 0;
   background-color: transparent;
-  background-image: url(http://heyross.io/skan/wp-content/themes/heyross/img/submit.png);
+  background-image: url('./img/submit.png');
+  background-size: cover;
   display: inline-block;
   cursor: pointer;
   border: none;
-  width: 68px;
+  width: 120px;
   /*height of the background image*/
-  height: 15px;
+  height: 30px;
   /*width of the background image*/
   box-shadow: none;
-  transition: all .25s ease; }
+  // transition: all .25s ease;
+  margin: 0 auto;
+}
   input[type="submit"]:hover {
     opacity: .55; }
 
@@ -1579,3 +1606,4 @@ div.wpcf7-response-output, div.wpcf7-validation-errors {
   padding: 0 !important;
   color: red !important;
   font-size: 0.85rem !important; }
+
