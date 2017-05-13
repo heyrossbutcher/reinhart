@@ -1,65 +1,87 @@
+Cookies.set('name', 'ageVerified', { expires: 1 });
+var is_cookie = Cookies.get('name');
+console.log(is_cookie);
+
+
+
+
+
+
 var app = {};//Namespace
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ var isMobile = 'mobile';
+} else {
+ var isMobile = 'not mobile';
+}
 //
+app.news = $('.news');
 app.story = $('.story');
 app.ciders = $('.ciders');
 app.products = $('.products');
 app.productsMarker = $('.products--marker-list');
 //
-app.story.on('mouseover', function(){``
-	$('.story--starter').addClass('makeHalf');
-	$('.story--starter-image').addClass('makeHalf');
-	$('.story--starter--title .the-cta').addClass('fade-in');
-});
-app.story.on('mouseleave', function(){
-	$('.story--starter').removeClass('makeHalf');
-	$('.story--starter-image').removeClass('makeHalf');
-	$('.story--starter--title .the-cta').removeClass('fade-in');
-});
+app.sectionMouseover = function(){
+	app.story.on('mouseover', function(){
+		$('.story--starter').addClass('makeHalf');
+		$('.story--starter-image').addClass('makeHalf');
+		$('.story--starter--title .the-cta').addClass('fade-in');
+	});
+	app.story.on('mouseleave', function(){
+		$('.story--starter').removeClass('makeHalf');
+		$('.story--starter-image').removeClass('makeHalf');
+		$('.story--starter--title .the-cta').removeClass('fade-in');
+	});
+	//
+	//
+	app.ciders.on('mouseover', function(){
+		$('.ciders--starter').addClass('makeHalf');
+		$('.ciders--starter-image').addClass('makeHalf');
+		$('.ciders--starter--title .the-cta').addClass('fade-in');
+	});
+	app.ciders.on('mouseleave', function(){
+		$('.ciders--starter').removeClass('makeHalf');
+		$('.ciders--starter-image').removeClass('makeHalf');
+		$('.ciders--starter--title .the-cta').removeClass('fade-in');
+	});
+	app.products.on('mouseover', function(){
+		$('.products--starter').addClass('makeHalf');
+		$('.products--starter-image').addClass('makeHalf');
+		$('.products--starter--title .the-cta').addClass('fade-in');
+	});
+	app.products.on('mouseleave', function(){
+		$('.products--starter').removeClass('makeHalf');
+		$('.products--starter-image').removeClass('makeHalf');
+		$('.products--starter--title .the-cta').removeClass('fade-in');
+	});
+}
 //
 //
-app.ciders.on('mouseover', function(){``
-	$('.ciders--starter').addClass('makeHalf');
-	$('.ciders--starter-image').addClass('makeHalf');
-	$('.ciders--starter--title .the-cta').addClass('fade-in');
-});
-app.ciders.on('mouseleave', function(){
-	$('.ciders--starter').removeClass('makeHalf');
-	$('.ciders--starter-image').removeClass('makeHalf');
-	$('.ciders--starter--title .the-cta').removeClass('fade-in');
-});
 //
 //
-app.products.on('mouseover', function(){
-	$('.products--starter').addClass('makeHalf');
-	$('.products--starter-image').addClass('makeHalf');
-	$('.products--starter--title .the-cta').addClass('fade-in');
-});
-app.products.on('mouseleave', function(){
-	$('.products--starter').removeClass('makeHalf');
-	$('.products--starter-image').removeClass('makeHalf');
-	$('.products--starter--title .the-cta').removeClass('fade-in');
-});
-//
-//
-app.story.on('click', function(){
-	$('.story--starter-container').addClass('takeOutStoryStarter');
-	$('.story--slider').addClass('bringInStorySlider');
-	$('.story').removeClass('cursor-on');
-});
-app.ciders.on('click', function(){
-	$('.ciders--starter-container').addClass('takeOutCidersStarter');
-	$('.ciders--slider').addClass('bringInCidersSlider');
-	$('.ciders').removeClass('cursor-on');
-});
-app.products.on('click', function(){
-	$('.products--starter-container').addClass('takeOutProductsStarter');
-	$('.products--slider').addClass('bringInProductsSliders');
-	$('.cidproductsers').removeClass('cursor-on');
-	$('.products--marker').addClass('show-it');
-	setTimeout(function(){
-		$('.products--marker').addClass('fade-in');
-	}, 500);
-});
+app.sectionClick = function(){
+	// app.news.on('click', function(){
+	// 	console.log('clicked');
+	// 	$('.news--starter').addClass('takeOutNewsStarter');
+	// 	$('.news--slider').addClass('bringInNewsSlider');
+	// 	$('.news').removeClass('cursor-on');
+	// });
+	app.story.on('click', function(){
+		$('.story--starter-container').addClass('takeOutStoryStarter');
+		$('.story--slider').addClass('bringInStorySlider');
+		$('.story').removeClass('cursor-on');
+	});
+	app.ciders.on('click', function(){
+		$('.ciders--starter-container').addClass('takeOutCidersStarter');
+		$('.ciders--slider').addClass('bringInCidersSlider');
+		$('.ciders').removeClass('cursor-on');
+	});
+	app.products.on('click', function(){
+		$('.products--starter-container').addClass('takeOutProductsStarter');
+		$('.products--slider').addClass('bringInProductsSliders');
+		$('.products').removeClass('cursor-on');
+	});
+}
 
 //FIND THE NUMBER OF CIDERS
 app.makeProductsIndex = function(){
@@ -77,6 +99,11 @@ app.changeProductsIndex = function(){
 
 /////////////
 /////////////
+// $('.flexslider-news').flexslider({
+// 	slideshow: false, 
+// 	animation: "slide"
+// });
+//
 $('.flexslider-story').flexslider({
 	slideshow: false, 
 	animation: "slide"
@@ -89,11 +116,35 @@ $('.flexslider-ciders').flexslider({
 // 
 $('.flexslider-products').flexslider({
 	slideshow: false, 
-	animation: "slide",
-	before: function(){
-		app.changeProductIndex();
-	} 
+	animation: "slide"
+	// before: function(){
+	// 	app.changeProductIndex();
+	// } 
 });
+//MOBILE NAV
+//////////////
+app.toggleProngs = function(){
+	$('.prong-1').toggleClass('slant-prong-right');
+	$('.prong-2').toggleClass('fade-prong');
+	$('.prong-3').toggleClass('slant-prong-left');
+}
+////////////////////
+//OPEN MOBILE NAV
+app.showMobileNav = function(){
+	console.log('clicked')
+	app.toggleProngs();
+	//Check if the mobile nav is toggles
+	// var isToggled = $('.mobile-fixed-wrapper').hasClass('toggled');
+	$('.mobile-fixed-wrapper').toggleClass('toggled');
+}
+//
+$('.menu-toggle').on('click', function(){
+	app.showMobileNav();
+});
+$('.mobile-nav li a').on('click', function(){
+	app.showMobileNav();
+});
+
 // 
 // APPLE ANIMATIONS
 ////////////////////
@@ -208,6 +259,8 @@ app.animateApple = function( apple, timeline ){
 	var $leaf02_10 = $('.' + apple  + ' #leaf02-10');
 	var $leaf02_11 = $('.' + apple  + ' #leaf02-11');
 	var $leaf02_12 = $('.' + apple  + ' #leaf02-12');
+	//
+	timeline.timeScale(.5);
 	// FIRST STEM
 	timeline.to( $theApple, .2, { opacity:1 } );
 	timeline.fromTo( $apple01, 1, {opacity:1, drawSVG:"100% 100%"}, {drawSVG:"0% 100%"} );
@@ -282,25 +335,24 @@ app.animateApple = function( apple, timeline ){
 	timeline.to( $leaf01_15, .2, { opacity:1 }, "-=.2");
 }
 //
-$('.apple-12').addClass('apple-12-left');
-app.animateApple('apple-12', tl12);
-setTimeout( function(){ $('.apple-11').addClass('apple-11-left'); app.animateApple('apple-11', tl11) }, 200);
-setTimeout( function(){ $('.apple-10').addClass('apple-10-left'); app.animateApple('apple-10', tl10) }, 400);
-setTimeout( function(){ $('.apple-09').addClass('apple-09-left'); app.animateApple('apple-09', tl09) }, 800);
-setTimeout( function(){ $('.apple-08').addClass('apple-08-left'); app.animateApple('apple-08', tl08) }, 1000);
-setTimeout( function(){ $('.apple-07').addClass('apple-07-left'); app.animateApple('apple-07', tl07) }, 1200);
-setTimeout( function(){ $('.apple-06').addClass('apple-06-left'); app.animateApple('apple-06', tl06) }, 1400);
-setTimeout( function(){ $('.apple-05').addClass('apple-05-left'); app.animateApple('apple-05', tl05) }, 1600);
-setTimeout( function(){ $('.apple-04').addClass('apple-04-left'); app.animateApple('apple-04', tl04) }, 1800);
-setTimeout( function(){ $('.apple-03').addClass('apple-03-left'); app.animateApple('apple-03', tl03) }, 2000);
-setTimeout( function(){ $('.apple-02').addClass('apple-02-left'); app.animateApple('apple-02', tl02) }, 2200);
-setTimeout( function(){ $('.apple-01').addClass('apple-01-left'); app.animateApple('apple-01', tl01) }, 2240);
+$('.apple-12').addClass('apple-12-left'); app.animateApple('apple-12', tl12);
+setTimeout( function(){ $('.apple-11').addClass('apple-11-left'); app.animateApple('apple-11', tl11) }, 300);
+setTimeout( function(){ $('.apple-10').addClass('apple-10-left'); app.animateApple('apple-10', tl10) }, 600);
+setTimeout( function(){ $('.apple-09').addClass('apple-09-left'); app.animateApple('apple-09', tl09) }, 900);
+setTimeout( function(){ $('.apple-08').addClass('apple-08-left'); app.animateApple('apple-08', tl08) }, 1200);
+setTimeout( function(){ $('.apple-07').addClass('apple-07-left'); app.animateApple('apple-07', tl07) }, 1500);
+setTimeout( function(){ $('.apple-06').addClass('apple-06-left'); app.animateApple('apple-06', tl06) }, 1800);
+setTimeout( function(){ $('.apple-05').addClass('apple-05-left'); app.animateApple('apple-05', tl05) }, 2100);
+setTimeout( function(){ $('.apple-04').addClass('apple-04-left'); app.animateApple('apple-04', tl04) }, 2400);
+setTimeout( function(){ $('.apple-03').addClass('apple-03-left'); app.animateApple('apple-03', tl03) }, 2700);
+setTimeout( function(){ $('.apple-02').addClass('apple-02-left'); app.animateApple('apple-02', tl02) }, 3000);
+setTimeout( function(){ $('.apple-01').addClass('apple-01-left'); app.animateApple('apple-01', tl01) }, 3300);
 //
 //START THE LINES MOVING
 setTimeout( function(){ 
 	$('.apple--baseline-left').addClass('move-left-line');
 	$('.apple--baseline-right').addClass('move-right-line');
-}, 5000);
+}, 7750);
 //START THE APPLES MOVING
 setTimeout( function(){ 
 	$appleHlder01.addClass('move-left-apples');
@@ -316,17 +368,45 @@ setTimeout( function(){
 	$appleHlder10.addClass('move-right-apples');
 	$appleHlder11.addClass('move-right-apples');
 	$appleHlder12.addClass('move-right-apples');
-}, 5250);
+}, 8000);
 //SHOW LOGO
 setTimeout( function(){ 
 	$introducing.addClass('show-intro');
 	$reinhartLogo.addClass('show-logo');
-}, 6500);
+}, 8500);
+//Bring in the News Slider
+setTimeout( function(){ 
+	console.log('bring in news');
+	$('.news--starter').addClass('takeOutNewsStarter');
+	$('.news--slider').addClass('bringInNewsSlider');
+	$('.news').removeClass('cursor-on');
+	//
+	$('.flexslider-news').flexslider({
+		slideshow: false, 
+		animation: "slide",
+		slideshow: true,                //Boolean: Animate slider automatically
+		slideshowSpeed: 10000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+		animationSpeed: 1000,            //Integer: Set the speed of animations, in milliseconds
+		pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+		pauseOnHover: true
+	});
+}, 12500);
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
+
+app.smoothScroller = function(){
+	$('.menu a').smoothScroll({ offset: -120 });
+}
+
+
 $(function() {
-	app.makeProductsIndex();
+	app.smoothScroller();
+	app.sectionClick();
+	if (isMobile = 'not mobile'){
+		console.log(isMobile);
+		app.sectionMouseover();
+	}
 });
 	

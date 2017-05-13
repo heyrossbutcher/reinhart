@@ -9,7 +9,7 @@
  */
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area" id="home">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -24,6 +24,7 @@ get_header(); ?>
 			endif; 
 			endif; 
 		?>
+
 		<section class="news">
 			<div class="news--starter">
 				<div class="news--starter--title">
@@ -1869,10 +1870,49 @@ get_header(); ?>
 						<!-- end of apple left -->
 					</div>
 				</div>
-					
+			</div>
+			<div class="news--slider flexslider flexslider-news">
+				<ul class="slides clearfix">
+					<?php $news = new wp_query(array(
+			            'post_type' => 'news_items',//we only want home pieces
+			            'posts_per_page' => -1
+			          )) ?> 
+					<?php
+						if ($news->have_posts()) : while ($news->have_posts()) : $news->the_post();
+							$thumb_id = get_post_thumbnail_id();
+							$thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
+							$theTitle = get_the_title();
+							$theCopy = get_the_content();
+							echo '<li class="clearfix">';
+							if($theCopy){
+								echo '<div class="news--panel news--panel-half clearfix">';
+								echo '<div class="image--holder half">';
+								echo '<img src="'.$thumb_url[0].'" alt="">';
+								echo '</div>';
+							} else {
+								echo '<div class="news--panel news--panel-full clearfix">';
+								echo '<div class="image--holder full">';
+								echo '<img src="'.$thumb_url[0].'" alt="">';
+								echo '</div>';
+							}
+							if($theCopy){
+								echo '<div class="copy--holder">';
+								echo '<div class="content--placer">';
+								echo '<h2>'.$theTitle.'</h2>';
+								echo '<p>'.$theCopy.'</p>';
+								echo '</div>';
+								echo '</div>';
+							}
+
+							echo '</div>';
+							echo '</li>';
+						endwhile;
+						endif;
+					?>
+				</ul>
 			</div>
 		</section>
-		<section class="story cursor-on clearfix">
+		<section class="story cursor-on clearfix" id="story">
 			<div class="story--starter-container">
 				<div class="story--starter-image" style="background-image: url(<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/oldTower.jpg)"></div>
 				<div class="story--starter">
@@ -1894,7 +1934,7 @@ get_header(); ?>
 				</ul>
 			</div>
 		</section>
-		<section class="ciders cursor-on clearfix">
+		<section class="ciders cursor-on clearfix" id="ciders">
 			<div class="ciders--starter-container">
 				<div class="ciders--starter-image" style="background-image: url(<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/oldTower.jpg)"></div>
 				<div class="ciders--starter">
@@ -1922,15 +1962,14 @@ get_header(); ?>
             'order' => 'ASC'
           )) ?> 
 		<?php
-			if ($products->have_posts()) : while ($products->have_posts()) : $products->the_post();
-					require_once('template-parts/products.php');
-			
-			endwhile;
-			endif;
+
+			if ($products->have_posts()){
+				require_once('template-parts/products.php');
+			}
 		?>
 		<!--  -->
 		
-		<section class="contact">
+		<section class="contact" id="contact">
 
 			<?php query_posts('pagename=Contact'); ?>
 			  <?php while (have_posts()) : the_post(); ?>

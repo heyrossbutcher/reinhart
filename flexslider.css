@@ -115,7 +115,9 @@ html[xmlns] .flexslider .slides {
 }
 .flex-direction-nav {
   *height: 0;
+  
 }
+
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
@@ -136,7 +138,7 @@ html[xmlns] .flexslider .slides {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.flexslider-story .flex-direction-nav a:before {
+.flexslider-news .flex-direction-nav a:before, .flexslider-products .flex-direction-nav a:before, .flexslider-story .flex-direction-nav a:before {
   font-family: "flexslider-icon";
   font-size: 40px;
   display: inline-block;
@@ -144,7 +146,7 @@ html[xmlns] .flexslider .slides {
   color: rgba(0, 0, 0, 0.8);
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
-.flexslider-story .flex-direction-nav a.flex-next:before {
+.flexslider-news .flex-direction-nav a.flex-next:before, .flexslider-products .flex-direction-nav a.flex-next:before, .flexslider-story .flex-direction-nav a.flex-next:before {
   content: url(http://localhost:8888/084-Reinhart/Production/wp-content/themes/heyross/images/story-next.png);
 }
 .flexslider-ciders .flex-direction-nav a:before {

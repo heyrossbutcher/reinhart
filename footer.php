@@ -31,6 +31,7 @@
 
 <script src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/js/TweenMax.min.js"></script>
 <script src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/js/DrawSVGPlugin.js"></script>
+<script src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/js/cookie.js"></script>
 <?php wp_footer(); ?>
 
 </body>

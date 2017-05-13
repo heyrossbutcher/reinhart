@@ -874,16 +874,14 @@ object {
   @media all and (max-width: 800px) {
     .news {
       margin-top: 100px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
-    .news {
-      height: 125vh; } }
   .news .news--starter {
     position: absolute;
+    cursor: pointer;
     overflow: hidden;
     width: 100%;
     height: 100%;
     background: #e73c3e;
-    transition: all .85s ease;
+    transition: all .5s ease;
     transform: scale(1.5); }
     .news .news--starter .news--starter--title {
       position: absolute;
@@ -978,14 +976,11 @@ object {
     height: 100%;
     position: absolute;
     left: 100%;
-    transition: all .85s ease;
+    transition: all .5s ease;
     background-color: #e73c3e;
     background-image: url("./img/full-apples.png");
-    background-repeat: repeat-x;
-    background-position: center 20vh; }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-      .news .news--slider {
-        background-position: center 20px; } }
+    background-position: center center;
+    background-repeat: repeat-x; }
     .news .news--slider .news--panel {
       overflow: hidden;
       width: 65vw;
@@ -1003,29 +998,8 @@ object {
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e7e8',GradientType=1 );
       /* IE6-9 fallback on horizontal gradient */ }
-      @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
-        .news .news--slider .news--panel {
-          width: 100%;
-          margin-top: 0;
-          border: 0;
-          border-radius: 0;
-          box-shadow: none; } }
-      @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-        .news .news--slider .news--panel {
-          width: 100%;
-          margin-top: 0;
-          border-radius: 0;
-          border: 0;
-          box-shadow: none; } }
       .news .news--slider .news--panel .half {
-        width: 50%;
-        overflow: hidden; }
-        @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-          .news .news--slider .news--panel .half {
-            height: 25vh;
-            width: 100%; }
-            .news .news--slider .news--panel .half img {
-              margin-top: -15vh; } }
+        width: 50%; }
       .news .news--slider .news--panel .full {
         width: 100%; }
       .news .news--slider .news--panel .image--holder {
@@ -1037,44 +1011,20 @@ object {
         width: 50%;
         height: 100%;
         position: relative; }
-        @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-          .news .news--slider .news--panel .copy--holder {
-            width: 100%; } }
         .news .news--slider .news--panel .copy--holder .content--placer {
           width: 100%;
           padding: 50px; }
-          @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-            .news .news--slider .news--panel .copy--holder .content--placer {
-              height: calc(75vh - 100px);
-              padding: 20px; } }
           .news .news--slider .news--panel .copy--holder .content--placer h2 {
-            font-size: 2vw;
+            font-size: 2.2rem;
             font-weight: 300;
             color: #e73c3e;
             margin-top: 0;
             line-height: 1.15; }
-            @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-              .news .news--slider .news--panel .copy--holder .content--placer h2 {
-                font-size: 1.5rem;
-                line-height: 1.15; } }
           .news .news--slider .news--panel .copy--holder .content--placer p {
-            font-size: 1.25vw;
+            font-size: 1rem;
             margin-bottom: 0; }
           .news .news--slider .news--panel .copy--holder .content--placer a {
             margin-top: 12px; }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
-      .news .news--slider .news--panel-full {
-        width: 100%;
-        margin-top: 0;
-        border-radius: 0;
-        border: 0;
-        box-shadow: none; } }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-      .news .news--slider .news--panel-full {
-        margin-top: 20vh; } }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: portrait) {
-      .news .news--slider .news--panel-half {
-        margin-top: 0; } }
 
 .move-left-line {
   transform: translateX(-25%) !important;
@@ -1139,52 +1089,24 @@ object {
   height: 100%;
   background-size: cover;
   background-position: center center; }
-  @media all and (max-width: 667px) {
-    .slide-image {
-      width: 35%; } }
-  @media all and (max-width: 460px) {
-    .slide-image {
-      float: left;
-      width: 100%;
-      height: 30vh; } }
 
 .slide-info {
   width: 50%;
   height: 100%;
   background-color: #fff;
   position: relative; }
-  @media all and (max-width: 667px) {
-    .slide-info {
-      width: 60%; } }
-  @media all and (max-width: 460px) {
-    .slide-info {
-      float: left;
-      width: 100%;
-      height: 55vh;
-      clear: left; } }
   .slide-info .info-wrapper {
     position: absolute;
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
     width: 60%; }
-    @media all and (max-width: 667px) {
-      .slide-info .info-wrapper {
-        width: 80%;
-        left: 50%; } }
-    @media all and (max-width: 460px) {
-      .slide-info .info-wrapper {
-        width: 75%; } }
     .slide-info .info-wrapper h2 {
       font-size: 2.2rem;
       color: #e73c3e;
       margin-top: 0;
       margin-bottom: 12px;
-      font-weight: 500;
-      line-height: 1.15; }
-      @media all and (max-width: 667px) {
-        .slide-info .info-wrapper h2 {
-          font-size: 1.8rem; } }
+      font-weight: 500; }
     .slide-info .info-wrapper p {
       font-size: 0.75rem;
       line-height: 1.75;
@@ -1195,9 +1117,6 @@ object {
   position: relative;
   overflow-x: hidden;
   border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
-  @media all and (max-width: 460px) {
-    .story {
-      height: 90vh; } }
   .story .story--starter-container {
     float: left;
     width: 100%;
@@ -1232,13 +1151,9 @@ object {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 450px; }
-        @media all and (max-width: 460px) {
-          .story .story--starter-container .story--starter .story--starter--title {
-            width: 100%; } }
   .story .story--slider {
     width: 100%;
     height: 100%;
-    background-color: #f2f1e0;
     position: absolute;
     left: -100%;
     transition: all .5s ease; }
@@ -1247,36 +1162,22 @@ object {
     width: 60%;
     height: 100%;
     margin-right: 15px; }
-    @media all and (max-width: 1000px) {
-      .story .logo-holder {
-        width: 100%;
-        padding: 0 20%;
-        margin: 5px auto; } }
   .story .title-holder {
     float: left;
     width: 30%;
     height: 100%;
     margin-top: 10px; }
-    @media all and (max-width: 1000px) {
-      .story .title-holder {
-        width: 100%;
-        padding: 0 32%;
-        clear: left;
-        margin: 0 auto 10px; } }
   .story .slide-image {
     float: right; }
   .story .slide-info {
     float: left;
-    background-color: #f2f1e0; }
+    background-color: rgba(231, 220, 196, 0.5); }
 
 .ciders {
   height: 500px;
   position: relative;
   overflow-x: hidden;
   border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
-  @media all and (max-width: 460px) {
-    .ciders {
-      height: 90vh; } }
   .ciders .ciders--starter-container {
     float: left;
     width: 100%;
@@ -1311,13 +1212,10 @@ object {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 450px; }
-        @media all and (max-width: 460px) {
-          .ciders .ciders--starter-container .ciders--starter .ciders--starter--title {
-            width: 100%; } }
   .ciders .ciders--slider {
     width: 100%;
     height: 100%;
-    background-color: #e8eaeb;
+    background: black;
     position: absolute;
     left: 100%;
     transition: all .5s ease; }
@@ -1326,22 +1224,11 @@ object {
     width: 60%;
     height: 100%;
     margin-right: 15px; }
-    @media all and (max-width: 1000px) {
-      .ciders .logo-holder {
-        width: 100%;
-        padding: 0 20%;
-        margin: 5px auto; } }
   .ciders .title-holder {
     float: left;
-    width: 25%;
+    width: 30%;
     height: 100%;
     margin-top: 10px; }
-    @media all and (max-width: 1000px) {
-      .ciders .title-holder {
-        width: 100%;
-        padding: 0 37.5%;
-        clear: left;
-        margin: 0 auto 10px; } }
   .ciders .slide-image {
     float: left; }
   .ciders .slide-info {
@@ -1351,11 +1238,7 @@ object {
 .products {
   height: 500px;
   position: relative;
-  overflow-x: hidden;
   border-bottom: 1px solid rgba(190, 149, 91, 0.5); }
-  @media all and (max-width: 460px) {
-    .products {
-      height: 90vh; } }
   .products .products--marker {
     width: 220px;
     height: 120px;
@@ -1404,9 +1287,6 @@ object {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 450px; }
-        @media all and (max-width: 460px) {
-          .products .products--starter-container .products--starter .products--starter--title {
-            width: 100%; } }
   .products .products--hider {
     width: 100%;
     height: 100%;
@@ -1418,29 +1298,17 @@ object {
       height: 100%;
       position: absolute;
       left: -100%;
-      transition: all .5s ease;
-      background-color: #f2f1e0; }
+      transition: all .5s ease; }
   .products .logo-holder {
     float: left;
     width: 50%;
     height: 100%;
     margin-right: 15px; }
-    @media all and (max-width: 1000px) {
-      .products .logo-holder {
-        width: 100%;
-        padding: 0 20%;
-        margin: 5px auto; } }
   .products .title-holder {
     float: left;
     width: 40%;
     height: 100%;
     margin-top: 7px; }
-    @media all and (max-width: 1000px) {
-      .products .title-holder {
-        width: 100%;
-        padding: 0 32%;
-        clear: left;
-        margin: 0 auto 10px; } }
   .products .the-cta {
     color: #E7DCC4; }
   .products .slide-image {
@@ -1451,38 +1319,14 @@ object {
     background-size: 1000px;
     background-position: center -20%;
     background-repeat: no-repeat; }
-    @media all and (max-width: 667px) {
-      .products .slide-image {
-        width: 40%;
-        background-size: 800px;
-        background-position: center 26%; } }
-    @media all and (max-width: 460px) {
-      .products .slide-image {
-        float: left;
-        background-size: 400px;
-        width: 100%;
-        height: 30vh;
-        clear: left; } }
     .products .slide-image img {
       width: auto;
       max-height: 80%;
       margin: 0 auto;
       margin-top: 60px; }
-      @media all and (max-width: 460px) {
-        .products .slide-image img {
-          max-height: 90%;
-          margin-top: 15px; } }
   .products .slide-info {
     float: left;
-    background-color: #f2f1e0; }
-    @media all and (max-width: 667px) {
-      .products .slide-info {
-        width: 60%; } }
-    @media all and (max-width: 460px) {
-      .products .slide-info {
-        float: left;
-        width: 100%;
-        height: 55vh; } }
+    background-color: rgba(231, 220, 196, 0.5); }
 
 .go-right {
   display: inline-block;
@@ -1494,13 +1338,6 @@ object {
   width: 100%;
   max-width: 650px;
   margin: 0 auto; }
-  @media all and (max-width: 667px) {
-    .contact {
-      padding: 100px 0;
-      width: 75%; } }
-  @media all and (max-width: 460px) {
-    .contact {
-      width: 85%; } }
   .contact p {
     font-size: 1.45rem !important;
     line-height: 1.25 !important;
@@ -1531,18 +1368,6 @@ object {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%; }
-  @media all and (max-width: 1000px) {
-    .tower {
-      background-size: 125%; } }
-  @media all and (max-width: 800px) {
-    .tower {
-      background-size: 150%; } }
-  @media all and (max-width: 650px) {
-    .tower {
-      background-size: 250%; } }
-  @media all and (max-width: 400px) {
-    .tower {
-      background-size: 350%; } }
 
 .makeHalf {
   width: 50% !important; }
@@ -1649,13 +1474,4 @@ div.wpcf7-response-output, div.wpcf7-validation-errors {
   margin: 0 !important;
   padding: 0 !important;
   color: red !important;
-  font-size: 0.7rem !important; }
-
-span.wpcf7-not-valid-tip, div.wpcf7-response-output, div.wpcf7-validation-errors {
-  color: red;
-  border: 0;
-  font-size: .7rem; }
-
-@media all and (max-width: 736px) {
-  .flex-direction-nav {
-    display: none; } }
+  font-size: 0.85rem !important; }

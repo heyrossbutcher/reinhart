@@ -23,6 +23,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+	<div class="prong prong-1"></div>
+	<div class="prong prong-2"></div>
+	<div class="prong prong-3"></div>
+</div>
+<div class="mobile-fixed-wrapper">
+	<div class="mobile-nav">
+		<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu') ); ?>
+	</div> 
+</div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'heyross' ); ?></a>
 
@@ -31,9 +41,9 @@
 			<div class="site-branding">
 				<?php
 				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/logo.svg" alt=""></a></h1>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/logo.svg" alt=""></h1></a>
 				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/logo.svg" alt=""></a></p>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><p class="site-title"><img src="<?php bloginfo( 'url' ); ?>/wp-content/themes/heyross/img/logo.svg" alt=""></p></a>
 				<?php
 				endif;
 
@@ -45,7 +55,6 @@
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'heyross' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 
