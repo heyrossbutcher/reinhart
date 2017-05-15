@@ -23,6 +23,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="ageSelect">
+	<div class="ageWrapper">
+		<?php require_once('template-parts/ageSelect.php'); ?>
+	</div>
+</div>
 <div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 	<div class="prong prong-1"></div>
 	<div class="prong prong-2"></div>

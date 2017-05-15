@@ -1,6 +1,6 @@
-Cookies.set('name', 'ageVerified', { expires: 1 });
-var is_cookie = Cookies.get('name');
-console.log(is_cookie);
+// Cookies.set('name', 'ageVerified', { expires: 1 });
+// var is_cookie = Cookies.get('name');
+// console.log(is_cookie);
 
 
 
@@ -8,6 +8,84 @@ console.log(is_cookie);
 
 
 var app = {};//Namespace
+
+
+
+///AGE CHECK
+// var age19 = 599184000000;
+// var age18 = 567648000000;
+var thirtyOneDays = '<option selected="selected">Day</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>'; 
+var thirtyDays = '<option selected="selected">Day</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option>'; 
+var twentyEightDays = '<option selected="selected">Day</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option>'; 
+//
+function getAge(){
+	//
+	var todaysDate = new Date();
+	var today = todaysDate.getTime();
+	var dd = $('#day').val();
+	var mm = $('#month').val();
+	var yy = $('#year').val();
+	//
+	var stringedDate = yy + '-' + mm + '-' + dd + 'T13:19:11+0000'
+	var usersDate = new Date(stringedDate);
+	var resultDate = usersDate.getTime();
+	//
+	var checkDate = today - resultDate;
+	//
+	var validAge;
+	var province = $('#province').val();
+	console.log(province);
+	//
+	if(province == 'alberta' || province == 'manitoba' || province == 'quebec'){
+		validAge = 568100000000;
+		console.log(validAge);
+	} else{
+		validAge = 599600000000;
+		console.log(validAge);
+	}
+	//
+	if (checkDate > validAge ){
+    	Cookies.set('name', 'ageVerified', { expires: 1 });
+		console.log('Cookie added');
+		app.is_cookie = Cookies.get('name');
+		$('.ageSelect').addClass('hide-it');
+		app.startTheApples();
+	} else {
+		$('.ageBlock').addClass('display-it');
+		console.log('youre too young to come in');
+	}
+}
+function monthFunction(){
+	$monthSelect = $('#month').val();
+	$daySelect = $('#day');
+	$daySelect.empty();
+	//
+	if($monthSelect == 04 || $monthSelect == 06 || $monthSelect == 09 || $monthSelect == 11 ){
+		$daySelect.append(thirtyDays);
+	} else if ($monthSelect == 02){
+		$daySelect.append(twentyEightDays);
+	} else{
+		$daySelect.append(thirtyOneDays);
+	}
+}
+
+$( '#ageGateway' ).submit(function( e ) {
+		e.preventDefault();
+		$provSelect = $('#province').val();
+		$monthSelect = $('#month').val();
+		$daySelect = $('#day').val();
+		$yearSelect = $('#year').val();
+		$('.ageBlock').removeClass('display-it');
+        $('.ageErrors').removeClass('display-it');
+
+	    if ($provSelect == 'default' || $monthSelect == 'default' || $daySelect == 'default' || $yearSelect == 'default') {
+	        $('.ageErrors').addClass('display-it');
+	        return false;
+	    } else {
+	    	getAge();
+	    }
+});
+
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
  var isMobile = 'mobile';
@@ -168,9 +246,7 @@ var $appleHlder12 = $('.apple-12');
 //
 var $introducing = $('.introducing');
 var $reinhartLogo = $('.reinhart-logo');
-//
-tl_line.to( $leftLine, 1.5, { opacity:1 });
-tl_line.to( $rightLine, 1.5, { opacity:1 }, "-=1.5");
+
 //
 var tl01 = new TimelineMax(); 
 var tl02 = new TimelineMax(); 
@@ -335,62 +411,73 @@ app.animateApple = function( apple, timeline ){
 	timeline.to( $leaf01_15, .2, { opacity:1 }, "-=.2");
 }
 //
-$('.apple-12').addClass('apple-12-left'); app.animateApple('apple-12', tl12);
-setTimeout( function(){ $('.apple-11').addClass('apple-11-left'); app.animateApple('apple-11', tl11) }, 300);
-setTimeout( function(){ $('.apple-10').addClass('apple-10-left'); app.animateApple('apple-10', tl10) }, 600);
-setTimeout( function(){ $('.apple-09').addClass('apple-09-left'); app.animateApple('apple-09', tl09) }, 900);
-setTimeout( function(){ $('.apple-08').addClass('apple-08-left'); app.animateApple('apple-08', tl08) }, 1200);
-setTimeout( function(){ $('.apple-07').addClass('apple-07-left'); app.animateApple('apple-07', tl07) }, 1500);
-setTimeout( function(){ $('.apple-06').addClass('apple-06-left'); app.animateApple('apple-06', tl06) }, 1800);
-setTimeout( function(){ $('.apple-05').addClass('apple-05-left'); app.animateApple('apple-05', tl05) }, 2100);
-setTimeout( function(){ $('.apple-04').addClass('apple-04-left'); app.animateApple('apple-04', tl04) }, 2400);
-setTimeout( function(){ $('.apple-03').addClass('apple-03-left'); app.animateApple('apple-03', tl03) }, 2700);
-setTimeout( function(){ $('.apple-02').addClass('apple-02-left'); app.animateApple('apple-02', tl02) }, 3000);
-setTimeout( function(){ $('.apple-01').addClass('apple-01-left'); app.animateApple('apple-01', tl01) }, 3300);
-//
-//START THE LINES MOVING
-setTimeout( function(){ 
-	$('.apple--baseline-left').addClass('move-left-line');
-	$('.apple--baseline-right').addClass('move-right-line');
-}, 7750);
-//START THE APPLES MOVING
-setTimeout( function(){ 
-	$appleHlder01.addClass('move-left-apples');
-	$appleHlder02.addClass('move-left-apples');
-	$appleHlder03.addClass('move-left-apples');
-	$appleHlder04.addClass('move-left-apples');
-	$appleHlder05.addClass('move-left-apples');
-	$appleHlder06.addClass('move-left-apples');
+app.startTheApples = function(){
+	console.log('start the apples');
 	//
-	$appleHlder07.addClass('move-right-apples');
-	$appleHlder08.addClass('move-right-apples');
-	$appleHlder09.addClass('move-right-apples');
-	$appleHlder10.addClass('move-right-apples');
-	$appleHlder11.addClass('move-right-apples');
-	$appleHlder12.addClass('move-right-apples');
-}, 8000);
-//SHOW LOGO
-setTimeout( function(){ 
-	$introducing.addClass('show-intro');
-	$reinhartLogo.addClass('show-logo');
-}, 8500);
-//Bring in the News Slider
-setTimeout( function(){ 
-	console.log('bring in news');
-	$('.news--starter').addClass('takeOutNewsStarter');
-	$('.news--slider').addClass('bringInNewsSlider');
-	$('.news').removeClass('cursor-on');
+	tl_line.to( $leftLine, 1.5, { opacity:1 });
+	tl_line.to( $rightLine, 1.5, { opacity:1 }, "-=1.5");
+
+	$('.apple-12').addClass('apple-12-left'); app.animateApple('apple-12', tl12);
+	setTimeout( function(){ $('.apple-11').addClass('apple-11-left'); app.animateApple('apple-11', tl11) }, 300);
+	setTimeout( function(){ $('.apple-10').addClass('apple-10-left'); app.animateApple('apple-10', tl10) }, 600);
+	setTimeout( function(){ $('.apple-09').addClass('apple-09-left'); app.animateApple('apple-09', tl09) }, 900);
+	setTimeout( function(){ $('.apple-08').addClass('apple-08-left'); app.animateApple('apple-08', tl08) }, 1200);
+	setTimeout( function(){ $('.apple-07').addClass('apple-07-left'); app.animateApple('apple-07', tl07) }, 1500);
+	setTimeout( function(){ $('.apple-06').addClass('apple-06-left'); app.animateApple('apple-06', tl06) }, 1800);
+	setTimeout( function(){ $('.apple-05').addClass('apple-05-left'); app.animateApple('apple-05', tl05) }, 2100);
+	setTimeout( function(){ $('.apple-04').addClass('apple-04-left'); app.animateApple('apple-04', tl04) }, 2400);
+	setTimeout( function(){ $('.apple-03').addClass('apple-03-left'); app.animateApple('apple-03', tl03) }, 2700);
+	setTimeout( function(){ $('.apple-02').addClass('apple-02-left'); app.animateApple('apple-02', tl02) }, 3000);
+	setTimeout( function(){ $('.apple-01').addClass('apple-01-left'); app.animateApple('apple-01', tl01) }, 3300);
 	//
-	$('.flexslider-news').flexslider({
-		slideshow: false, 
-		animation: "slide",
-		slideshow: true,                //Boolean: Animate slider automatically
-		slideshowSpeed: 10000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-		animationSpeed: 1000,            //Integer: Set the speed of animations, in milliseconds
-		pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
-		pauseOnHover: true
-	});
-}, 12500);
+	if(isMobile == 'not mobile'){
+		console.log(isMobile)
+		//START THE LINES MOVING
+		setTimeout( function(){ 
+			$('.apple--baseline-left').addClass('move-left-line');
+			$('.apple--baseline-right').addClass('move-right-line');
+		}, 7750);
+		//START THE APPLES MOVING
+		setTimeout( function(){ 
+			$appleHlder01.addClass('move-left-apples');
+			$appleHlder02.addClass('move-left-apples');
+			$appleHlder03.addClass('move-left-apples');
+			$appleHlder04.addClass('move-left-apples');
+			$appleHlder05.addClass('move-left-apples');
+			$appleHlder06.addClass('move-left-apples');
+			//
+			$appleHlder07.addClass('move-right-apples');
+			$appleHlder08.addClass('move-right-apples');
+			$appleHlder09.addClass('move-right-apples');
+			$appleHlder10.addClass('move-right-apples');
+			$appleHlder11.addClass('move-right-apples');
+			$appleHlder12.addClass('move-right-apples');
+		}, 8000);
+	}
+	//SHOW LOGO
+	setTimeout( function(){ 
+		$introducing.addClass('show-intro');
+		$reinhartLogo.addClass('show-logo');
+	}, 8500);
+	//Bring in the News Slider
+	setTimeout( function(){ 
+		console.log('bring in news');
+		$('.news--starter').addClass('takeOutNewsStarter');
+		$('.news--slider').addClass('bringInNewsSlider');
+		$('.news').removeClass('cursor-on');
+		//
+		$('.flexslider-news').flexslider({
+			slideshow: false, 
+			animation: "slide",
+			slideshow: true,                //Boolean: Animate slider automatically
+			slideshowSpeed: 10000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+			animationSpeed: 1000,            //Integer: Set the speed of animations, in milliseconds
+			pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+			pauseOnHover: true
+		});
+	}, 12500);
+}
+
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
@@ -404,9 +491,20 @@ app.smoothScroller = function(){
 $(function() {
 	app.smoothScroller();
 	app.sectionClick();
+	// 
 	if (isMobile = 'not mobile'){
 		console.log(isMobile);
 		app.sectionMouseover();
+	}
+	// 
+	Cookies.remove('ageVerified');
+	app.is_cookie = Cookies.get('name');
+	if(app.is_cookie == 'ageVerified'){
+		app.startTheApples();
+		$('.ageSelect').addClass('hide-it');
+	} else {
+		$('.ageSelect').addClass('fade-in');
+		console.log('no cookie');
 	}
 });
 	

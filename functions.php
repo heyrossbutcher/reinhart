@@ -112,7 +112,8 @@ function heyross_scripts() {
 
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array(), '20151215', true );
 	
-
+	wp_enqueue_script( 'cookie', get_template_directory_uri() . '/js/cookie.js', array(), '20151215', true );
+	
 	wp_enqueue_script( 'heyross-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'heyross-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -120,6 +121,10 @@ function heyross_scripts() {
 	// wp_enqueue_script( 'gsap', get_template_directory_uri() . '/js/TweenLite.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20151215', true );
+
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

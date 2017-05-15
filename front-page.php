@@ -10,6 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area" id="home">
+	
 		<main id="main" class="site-main" role="main">
 
 		<?php
